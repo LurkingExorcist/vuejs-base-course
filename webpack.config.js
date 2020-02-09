@@ -7,7 +7,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const outputDirectory = 'dist';
 
 module.exports = {
-    entry: "./src/index.js",
+    mode: "development",
+    entry: ["./src/index.js"],
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, outputDirectory),
@@ -49,6 +50,6 @@ module.exports = {
         }),
         new webpackCopy([
             { from: 'stubs/index.html' }
-          ])
+        ])
     ]
 };

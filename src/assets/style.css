@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    background: black;
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.side-bar {
+    background: red;
+    width: 20%;
+}
+
+.content {
+    background: white;
+    width: 80%;
+}
