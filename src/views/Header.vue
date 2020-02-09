@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import VLink from '../components/Link.vue';
 import VInputText from '../components/InputText.vue';
 
@@ -39,9 +41,12 @@ export default {
         }
     },
     methods: {
-        onSearch() {
+        async onSearch() {
             // todo: vuex dispatch or smthng
-            console.log(this.searchText);
+            const {
+                data
+            } = await axios.get(`/api/search?q=${this.searchText}`);
+            console.log(data);
         }
     }
 }
