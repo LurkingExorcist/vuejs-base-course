@@ -1,6 +1,8 @@
 # vuejs-base-course
 Учебный проект по базовому курсу vuejs
+
 Тема проекта - Музыкальный сервис
+
 API - https://developers.deezer.com/termsofuse#vi
 
 # Сборка и запуск проекта
