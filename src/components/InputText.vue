@@ -1,7 +1,7 @@
 <template>
 <div class="input-container">
     <input :class="classes" :value="value" type="text" @input="onInput">
-    <Icon v-if="icon" :name="icon" :theme="theme"/>
+    <Icon v-if="icon" :name="icon" :theme="theme" @click="$emit('icon-click')"/>
 </div>
 </template>
 

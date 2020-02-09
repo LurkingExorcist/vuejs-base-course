@@ -1,5 +1,5 @@
 <template>
-    <div :class="classes" v-html="icon">
+    <div :class="classes" v-html="icon" @click="$emit('click')">
     </div>
 </template>
 
@@ -34,5 +34,9 @@ export default {
 
 .icon--dark svg {
     fill: white;
+}
+
+.icon--clickable {
+    cursor: pointer;
 }
 </style>

@@ -7,8 +7,9 @@
         <div class="subheader__item search">
             <VInputText
                 v-model="searchText"
-                theme="dark"
+                :theme="['dark', 'clickable']"
                 icon="search"
+                @icon-click="onSearch"
             />
         </div>
     </div>
@@ -37,8 +38,12 @@ export default {
             }]
         }
     },
-    mounted() {}
-
+    methods: {
+        onSearch() {
+            // todo: vuex dispatch or smthng
+            console.log(this.searchText);
+        }
+    }
 }
 </script>
 
