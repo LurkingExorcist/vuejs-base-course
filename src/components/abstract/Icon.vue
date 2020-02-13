@@ -12,7 +12,7 @@ export default {
     },
     data() {
         return {
-            icon: require(`!raw-loader!../assets/icons/${this.name}.svg`).default,
+            icon: require(`!raw-loader!../../assets/icons/${this.name}.svg`).default,
             classes: ['icon']
         };
     },

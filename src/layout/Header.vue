@@ -19,8 +19,8 @@
 <script>
 import axios from 'axios';
 
-import VLink from '../components/Link.vue';
-import VInputText from '../components/InputText.vue';
+import VLink from '../components/abstract/Link.vue';
+import VInputText from '../components/abstract/InputText.vue';
 
 export default {
     name: 'Header',
@@ -45,7 +45,7 @@ export default {
             // todo: vuex dispatch or smthng
             const {
                 data
-            } = await axios.get(`/api/search?q=${this.searchText}`);
+            } = await axios.get(`/api/artist?q=${this.searchText}`);
             console.log(data);
         }
     }
