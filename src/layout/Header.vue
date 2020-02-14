@@ -1,23 +1,24 @@
 <template>
-<div class="header">
+<header class="header">
     <div class="header-logo">
-        Music Service
+        Deezer Wrapper
     </div>
     <div class="subheader-container">
         <div class="subheader__item search">
             <VInputText
                 v-model="searchText"
-                theme="dark"
+                :theme="['dark', 'clickable']"
                 icon="search"
+                @icon-click="onSearch"
             />
         </div>
     </div>
-</div>
+</header>
 </template>
 
 <script>
-import VLink from '../components/Link.vue';
-import VInputText from '../components/InputText.vue';
+import VLink from '../components/abstract/Link.vue';
+import VInputText from '../components/abstract/InputText.vue';
 
 export default {
     name: 'Header',
@@ -37,8 +38,15 @@ export default {
             }]
         }
     },
-    mounted() {}
-
+    methods: {
+        async onSearch() {
+            // todo: vuex dispatch or smthng
+            const {
+                data
+            } = await axios.get(`/api/artist?q=${this.searchText}`);
+            console.log(data);
+        }
+    }
 }
 </script>
 

@@ -28,18 +28,18 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                  'vue-style-loader',
-                  {
-                    loader: 'css-loader',
-                    options: { importLoaders: 1 }
-                  },
-                  'postcss-loader'
+                    'vue-style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: { importLoaders: 1 }
+                    },
+                    'postcss-loader'
                 ]
-              },
+            },
             {
                 test: /\.(jpe?g|gif|png|svg|woff|ttf|eot|wav|mp3)$/,
                 loader: 'file-loader'
-              }
+            }
         ]
     },
     plugins: [

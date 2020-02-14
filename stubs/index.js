@@ -1,17 +1,10 @@
 const express = require("express");
 const app = express();
 
-app.use(express.static("dist"));
+const api = require('./api');
 
-app.get(["/api"], function(request, response) {
-  setTimeout(() =>
-  response
-      .header('Content-Type', 'application/json')
-      .send(
-        { text: 'Hello world!' }
-      )
-  , 2000);
-  });
+app.use(express.static("dist"));
+app.use("/api", api);
 
 app.listen(3000, () => console.log("Listening on port 3000!"));
 

@@ -1,17 +1,17 @@
 <template>
 <div id="app">
-    <Header />
     <div class="container">
-        <SideBar />
-        <Content />
+        <Header/>
+        <SubHeader/>
+        <Content/>
     </div>
 </div>
 </template>
 
 <script>
-import Header from './views/Header.vue'
-import Content from './views/Content.vue'
-import SideBar from './views/SideBar.vue'
+import Header from './layout/Header.vue'
+import SubHeader from './layout/SubHeader.vue'
+import Content from './layout/Content.vue'
 
 import './assets/style.css';
 
@@ -19,8 +19,8 @@ export default {
     name: 'app',
     components: {
         Header,
-        Content,
-        SideBar
+        SubHeader,
+        Content
     }
 }
 </script>
