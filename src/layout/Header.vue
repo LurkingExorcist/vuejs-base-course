@@ -1,7 +1,7 @@
 <template>
-<div class="header">
+<header class="header">
     <div class="header-logo">
-        Music Service
+        Deezer Wrapper
     </div>
     <div class="subheader-container">
         <div class="subheader__item search">
@@ -13,12 +13,10 @@
             />
         </div>
     </div>
-</div>
+</header>
 </template>
 
 <script>
-import axios from 'axios';
-
 import VLink from '../components/abstract/Link.vue';
 import VInputText from '../components/abstract/InputText.vue';
 

@@ -1,7 +1,19 @@
 <template>
 <div class="input-container">
-    <input :class="classes" :value="value" type="text" @input="onInput">
-    <Icon v-if="icon" :name="icon" :theme="theme" @click="$emit('icon-click')"/>
+    <input 
+        :class="classes" 
+        :value="value" 
+        type="text" 
+        @input="onInput"
+        @focus="$emit('input-focus')"
+        @blur="$emit('input-blur')"
+    >
+    <Icon 
+        v-if="icon" 
+        :name="icon" 
+        :theme="theme" 
+        @click="$emit('icon-click')"
+    />
 </div>
 </template>
 

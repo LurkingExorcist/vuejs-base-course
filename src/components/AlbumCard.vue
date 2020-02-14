@@ -1,14 +1,14 @@
 <template>
     <Card
-        img="https://picsum.photos/480"
+        img="https://picsum.photos/480/?random"
     >
-        <div class="artist-title">Artist: {{ title }}</div>
-        <div class="artist-genres-container">
+        <div class="album-title">Title: {{ item.title }}</div>
+        <div class="album-genres-container">
             Genres: 
-            <div class="artist-genres">
+            <div class="album-genres">
                 <div 
-                    class="artist-genres__item"
-                    v-for="(genre, i) in genres"
+                    class="album-genres__item"
+                    v-for="(genre, i) in item.genres"
                     :key="i"
                 >
                     {{ genre }}
@@ -22,35 +22,32 @@
 import Card from './abstract/Card.vue';
 
 export default {
-    name: 'ArtistCard',
+    name: 'AlbumCard',
     components: {
         Card
     },
     props: {
-        title: String,
-        genres: Array
+        item: Object
     }
 }
 </script>
 
 <style scoped>
-    .artist-genres-container {
+    .album-genres-container {
         display: flex;
         align-items: center;
     }
 
-    .artist-genres {
+    .album-genres {
         display: flex;
+        flex-wrap: wrap;
         margin-left: 8px;
     }
 
-    .artist-genres__item:not(:last-child) {
-        margin-right: 8px;
-    }
-
-    .artist-genres__item {
+    .album-genres__item {
         background: rgb(109, 221, 236);
         padding: 4px;
         border-radius: 4px;
+        margin: 4px;
     }
 </style>

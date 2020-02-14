@@ -1,31 +1,42 @@
 <template>
-    <div class="content">
-        <ArtistCard
-            v-for="(artist, i) in artists"
-            :title="artist.title"
-            :genres="artist.genres"
+    <main class="content">
+        <component
+            v-for="(item, i) in items"
+            :item="item"
+            :is="component"
             :key="i"
         />
-    </div>
+    </main>
 </template>
 
 <script>
-import ArtistCard from '../components/ArtistCard.vue';
+import { mapActions, mapState } from 'vuex';
+
+import AlbumCard from '../components/AlbumCard.vue';
+import TracklistCard from '../components/TracklistCard.vue';
 
 export default {
     name: 'Content',
     components: {
-        ArtistCard
+        AlbumCard,
+        TracklistCard
     },
-    data() {
-        return {
-            artists: [...new Array(8)].map((_, i) => ({
-                title: i.toString().repeat(8),
-                genres: [...new Array(4)].map((_, i) => i.toString().repeat(4))
-            }))
-        }
+    computed: {
+        component() {
+            switch(this.subjectType) {
+                case 'album':
+                    return AlbumCard;
+                case 'radio':
+                    return TracklistCard;
+            }
+        },
+        ...mapState(['subjectType', 'items'])
     },
-    mounted() {}
-
+    async created() {
+        await this.getRadio();
+    },
+    methods: {
+        ...mapActions(['getRadio'])
+    }
 }
 </script>
