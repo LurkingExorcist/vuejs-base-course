@@ -1,6 +1,22 @@
 import VueRouter from 'vue-router'
 
-// todo: добавить страницы: артист, альбом, треклист
+import Artists from '../pages/Artists.vue'
+import Radio from '../pages/Radio.vue'
+import Search from '../pages/Search.vue'
+
 export default new VueRouter({
-    routes: []
+    routes: [
+        {
+            path: '/',
+            component: Radio
+        }, 
+        {
+            path: '/artists',
+            component: Artists
+        }, 
+        {
+            path: '/search',
+            component: Search
+        }
+    ]
 })

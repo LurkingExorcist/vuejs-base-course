@@ -9,7 +9,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         items: [],
-        subjectType: 'radio'
+        currentTrack: null,
+        itemsLoaded: false
     },
     actions,
     mutations

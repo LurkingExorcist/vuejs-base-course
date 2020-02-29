@@ -1,66 +1,45 @@
 <template>
-<header class="header">
-    <div class="header-logo">
-        Deezer Wrapper
-    </div>
-    <div class="subheader-container">
-        <div class="subheader__item search">
-            <VInputText
-                v-model="searchText"
-                :theme="['dark', 'clickable']"
-                icon="search"
-                @icon-click="onSearch"
-            />
-        </div>
-    </div>
-</header>
+    <sui-menu attached="top">
+        <sui-menu-item 
+            v-for="({ title, href }, i) in links"
+            :key="i"
+            :active="$route.path === href"
+            link 
+            @click="$router.push(href)"
+        >
+            {{ title }}
+        </sui-menu-item>
+        <sui-menu-menu position="right">
+            <sui-menu-item 
+                :active="$route.path === '/search'"
+                link 
+                right
+                @click="$router.push('/search')"
+            >
+                Поиск
+            </sui-menu-item>
+        </sui-menu-menu>
+    </sui-menu>
 </template>
 
 <script>
-import VLink from '../components/abstract/Link.vue';
-import VInputText from '../components/abstract/InputText.vue';
 
 export default {
-    name: 'Header',
-    components: {
-        VLink,
-        VInputText
-    },
+    name: "Header",
     data() {
         return {
-            searchText: '',
-            links: [{
-                title: 'Home',
-                href: '/home'
-            }, {
-                title: 'Music',
-                href: '/music'
-            }]
-        }
-    },
-    methods: {
-        async onSearch() {
-            // todo: vuex dispatch or smthng
-            const {
-                data
-            } = await axios.get(`/api/artist?q=${this.searchText}`);
-            console.log(data);
-        }
+            searchText: "",
+            links: [
+                {
+                    title: "Радио",
+                    href: "/"
+                },
+                {
+                    title: "Исполнители",
+                    href: "/artists"
+                }
+            ]
+        };
     }
-}
+};
 </script>
-
-<style scoped>
-.header-logo {
-    font-size: 24px;
-}
-
-.subheader-container {
-    display: flex;
-    font-size: 16px;
-}
-
-.subheader__item:not(:last-child) {
-    margin-right: 8px;
-}
-</style>
