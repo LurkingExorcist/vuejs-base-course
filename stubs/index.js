@@ -7,8 +7,8 @@ app.use(express.static("dist"));
 app.use("/api", api);
 
 app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).send('Something broke!');
+    console.error(err);
+    res.status(500).send('Something broke!');
 });
 
 

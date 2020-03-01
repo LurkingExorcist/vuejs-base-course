@@ -13,8 +13,8 @@ Vue.use(SuiVue)
 Vue.use(VueRouter)
 
 new Vue({
-  el: '#app',
-  render: h => h(App),
-  store,
-  router
+    el: '#app',
+    render: h => h(App),
+    store,
+    router
 });
