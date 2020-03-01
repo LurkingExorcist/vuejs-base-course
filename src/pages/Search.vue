@@ -2,6 +2,7 @@
 <div id="app">
     <div class="container">
         <Header/>
+        <NowPlaying/>
         <SearchPanel/>
         <Tracks/>
     </div>
@@ -10,6 +11,7 @@
 
 <script>
 import Header from '../layout/Header.vue'
+import NowPlaying from '../layout/NowPlaying.vue'
 import SearchPanel from '../layout/SearchPanel.vue'
 import Tracks from '../layout/Tracks.vue'
 
@@ -19,6 +21,7 @@ export default {
     name: 'Search',
     components: {
         Header,
+        NowPlaying,
         SearchPanel,
         Tracks
     }

@@ -57,6 +57,9 @@ export default {
     ...mapState(['currentTrack'])
   },
   created() {
+    this.audio.artist = this.data.artist.name;
+    this.audio.title = this.data.title;
+    
     this.audio.addEventListener('play', this.setPlay);
     this.audio.addEventListener('pause', this.setPause);
   },
