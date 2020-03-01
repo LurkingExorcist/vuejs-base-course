@@ -50,8 +50,8 @@ export default {
         prevTrack.removeEventListener('pause', this.setPause);
       }
     
-      newTrack.addEventListener('play', this.setPlay);
-      newTrack.addEventListener('pause', this.setPause);
+      this.currentTrack.addEventListener('play', this.setPlay);
+      this.currentTrack.addEventListener('pause', this.setPause);
     }
   },
   data() {
