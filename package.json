@@ -4,7 +4,7 @@
   "description": "vuejs project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode development",
+    "build": "webpack --mode production",
     "start": "nodemon ./stubs/server.js"
   },
   "repository": {
@@ -17,9 +17,9 @@
   "author": "timurbabkin.pshh@gmail.com@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AVVlasov/vuejs-base-course/issues"
+    "url": "https://github.com/Hope410/vuejs-base-course/issues"
   },
-  "homepage": "https://github.com/AVVlasov/vuejs-base-course#readme",
+  "homepage": "https://github.com/Hope410/vuejs-base-course#readme",
   "dependencies": {
     "axios": "0.19.2",
     "semantic-ui-css": "^2.4.1",
