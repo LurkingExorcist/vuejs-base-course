@@ -95,8 +95,10 @@ export default {
                 setTimeout(() => {
                     card.style.transition = '0.5s all';
                     card.style.width = '100%';
-                    container.scrollIntoView({ behavior: 'smooth' });
                 }, 0);
+                setTimeout(() => {
+                    container.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
 
                 container.style['grid-column-start'] = 1;
                 container.style['grid-column-end'] = 'span 2';
